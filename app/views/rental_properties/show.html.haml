@@ -1,0 +1,33 @@
+- flash.each do |key, value|
+    .alert{ :class => "alert-#{key}" }
+    %button.close{ :data => { :dismiss => "alert" } } x
+    %strong
+        = value
+
+#main.container
+    .row
+        %h3.header.title= "#{@property.title}"
+
+    .row
+        .col-md-offset-2
+        .col-md-8.description= "#{@property.description}"
+    .row
+        .col-md-offset-2
+    .row
+        .col-md-offset-2
+        .col-md-4.distance= "#{number_to_human(@property.distance_from(@location), units: {unit: 'mi'}) || 'Unknown distance'} away from you."
+        .col-md-4.price= "#{number_to_currency(@property.price)}/per month."
+    .rom
+        - if @property.image.attached?
+            =image_tag(prop.image)
+        - else
+            =image_tag 'default_house.jpg'
+
+    %br
+    %br
+
+    .row
+        .col-md-offset-1
+        .col-md-2.button-navigate= link_to('Back to rental properties list', rental_properties_path)
+        .col-md-2.button-navigate= link_to('Edit rental property', edit_rental_property_path(@property))
+        .col-md-2.button-navigate= link_to('Destroy rental property', rental_property_path(@property), method: :delete)
