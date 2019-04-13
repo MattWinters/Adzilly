@@ -3,23 +3,26 @@
     %button.close{ :data => { :dismiss => "alert" } } x
     %strong
         = value
+#main.container
+    .form
+        =form_for @property, :method => :patch do |f|
+            =f.label :title
+            =f.text_field :title
 
-.form
-    =form_for @property, :method => :patch do |f|
-        =f.label :title
-        =f.text_field :title
+            =f.label :description
+            =f.text_field :description
 
-        =f.label :description
-        =f.text_field :description
+            =f.label :address
+            =f.text_field :address
 
-        =f.label :address
-        =f.text_field :address
+            =f.label "Asking price"
+            =f.number_field :price
 
-        =f.label "Asking price"
-        =f.number_field :price
+            =f.label "Image"
+            =f.file_field :images
 
-        =f.submit
+            =f.submit
 
 .row
-    .col-md-offset-1
-    .col-md-2.button-navigate= link_to('Cancel changes to the rental property listing', rental_property_path(@property))
+    .middle
+        .button-navigate= link_to('cancel changes', rental_property_path(@property))

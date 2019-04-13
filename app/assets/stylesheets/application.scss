@@ -1,10 +1,46 @@
-// Place all the styles related to the RentalProperties controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
 
-// .price, .distance {
-//     text-align: right;
-// }
+ @import "bootstrap";
+
+ .logo{
+   padding: 7px 7px 29px 7px;
+   color: #A1D33C;
+ }
+
+ #footer{
+   color: white;
+   margin-top: 30px;
+   padding: 7px;
+   position: relative;
+   bottom: 0;
+   width: 100%;
+   background: black;
+
+ }
+
+ .footer-images{
+   margin: auto;
+   display: inline-block;
+ }
+
+.right {
+  display: inline-block;
+  margin-left: 80%;
+  /* position: relative;
+  left: 110; */
+}
 
 .form input, select {
   width: 100%;
@@ -90,7 +126,3 @@
 .description {
   width: 20%
 }
-
-// .footer-info{
-//     display: inline-block;
-// }

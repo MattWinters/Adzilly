@@ -1,12 +1,12 @@
-- flash.each do |key, value|
-    .alert{ :class => "alert-#{key}" }
-    =link_to('x', rental_properties_path)
-    %strong
-        = value
-
 .filter
     =form_tag rental_properties_path(action: 'index'), method: "get"
     =hidden_field_tag :filter, true
+
+    =label_tag :price, "Maximum price"
+    =number_field_tag :price, @price
+
+    =label_tag :industy, "Industry"
+    =number_field_tag :industy, @industry
 
     =label_tag :miles, "Within"
     =number_field_tag :miles, @miles
@@ -14,9 +14,9 @@
     =label_tag :filter_location, "miles of"
     =text_field_tag :filter_location, @filter_location
 
-    =submit_tag "Refine the list of rental properties"
-
-    =link_to('Clear', rental_properties_path(:clear => true))
+    .submit
+        =submit_tag "Filter"
+        =link_to('Clear', rental_properties_path(:clear => true))
 
 #main.container
     %h3.header Available locations
@@ -24,24 +24,28 @@
     %table.table
         %thead
             %tr
-                %th= link_to('Property', rental_properties_path(:order => 'title'))
-                %th Description
-                %th= link_to('Distance from you', rental_properties_path(:order => 'distance'))
-                %th= link_to('Asking Price', rental_properties_path(:order => 'price'))
-                %th Image
+                %th.column= link_to('Property', rental_properties_path(:order => 'title'))
+                %th.column Description
+                %th.column= link_to('Distance from you', rental_properties_path(:order => 'distance'))
+                %th.column= link_to('Asking Price', rental_properties_path(:order => 'price'))
+                %th.images Images
 
         %tbody
             -@properties.each do |prop|
                 %tr.property
                     %td.title= link_to "#{prop.title}", rental_property_path(prop)
-                    %td.description= prop.description
+                    %td.description= truncate(prop.description,length: 60)
                     %td.details= number_to_human(prop.distance_from(@location), units: {unit: "mi"}) || "Unknown"
                     %td.price= "#{number_to_currency(prop.price)} /per month"
                     %td
-                        - if prop.image.attached?
-                            =image_tag(prop.image, height: '100', width: '150')
-                        - else
-                            = image_tag 'default_house.jpg', alt: 'none', height: '100', width: '150'
+                        - count = 1
+                        - prop.images.each do |p|
+                            - if count % 3 == 0
+                                -break
+                            =image_tag(p, height: '100', width: '150')
+                            - count += 1
+                        -# - else
+                        -#     = image_tag 'no_image.jpg', alt: 'none', height: '100', width: '150'
     .row
         .col-md-offset-1
         .col-md-2.button-navigate= link_to('Create a new listing', new_rental_property_path)

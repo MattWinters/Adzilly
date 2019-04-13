@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.action_mailer.default_url_options = { host: 'Adzilla.com', port: 80 }
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -79,6 +81,9 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+
+  # This is for devise security measures
+  config.log_level = :warn
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)

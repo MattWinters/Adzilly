@@ -24,12 +24,20 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'haml', '~> 5.0.4'
-gem 'haml-rails'
+gem 'bootstrap', '~> 4.3.1'
+
+gem 'devise'
 
 gem 'geocoder'
 
+gem 'haml', '~> 5.0.4'
+
+gem 'haml-rails'
+
+# gem to allow images
 gem 'image_processing', '~> 1.2'
+
+gem 'jquery-rails'
 
 
 # Use Capistrano for deployment

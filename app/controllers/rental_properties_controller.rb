@@ -3,6 +3,7 @@ class RentalPropertiesController < ApplicationController
     update_session
     @location = get_location
     @properties = RentalProperty.all
+    filter
     order = params[:order] || :distance
     if order.to_sym != :distance
         @properties = @properties.order(order)
@@ -55,14 +56,10 @@ private
   def update_session
     filterParams = [:bathrooms, :price, :maxpersons, :miles, :filter_location, :filter, :clear]
     if params[:filter]
-      session[:bathrooms] = params[:bathrooms]
       session[:price] = params[:price]
-      session[:maxpersons] = params[:maxpersons]
       session[:miles] = params[:miles]
       session[:filter_location] = params[:filter_location]
-      @bathrooms = session[:bathrooms]
       @price = session[:price]
-      @maxpersons = session[:maxpersons]
       @miles = session[:miles]
       @filter_location = session[:filter_location]
     end
@@ -70,6 +67,26 @@ private
       session.clear
     end
   end
+
+  private
+    def filter
+      if session[:industry] && session[:industry] != ""
+        @properties = @properties.where("industry >= ?", session[:industry])
+      end
+      if session[:price] && session[:price] != ""
+        @properties = @properties.where("price <= ?", session[:price])
+      end
+      if session[:maxpersons] && session[:maxpersons] != ""
+        @properties = @properties.where("maxpersons >= ?", session[:maxpersons])
+      end
+      if session[:miles] && session[:miles] != ""
+        if session[:filter_location] && session[:filter_location] != ""
+          @properties = @properties.near(session[:filter_location], session[:miles])
+        else
+          @properties = @properties.near(@location, session[:miles])
+        end
+      end
+    end
 
 private
   def get_location
@@ -84,7 +101,7 @@ private
 
 private
   def create_update_params
-    params.require(:rental_property).permit(:title, :description, :bedrooms, :beds, :maxpersons, :bathrooms, :pets_allowed, :address, :price, :image)
+    params.require(:rental_property).permit(:title, :description, :bedrooms, :beds, :maxpersons, :bathrooms, :pets_allowed, :address, :price, :images)
   end
 
 end
