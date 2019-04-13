@@ -10,24 +10,24 @@
   %body
     .container-fluid
       .row
+        - flash.each do |key, value|
+          .alert{ :class => "alert-#{key}" }
+          -# %button.close{ :data => { :dismiss => "alert" } } x
+          %strong
+            = value
+      .row
         .col-md-4
           %h1.logo Adzilla
         .offset-md-6.col-md-2
           -if user_signed_in?
             %p
               %span= "hello, #{current_user.username}"
-              =link_to logout, destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-sm"
+              =link_to "logout", destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-sm"
           -else
             %br
             =link_to "Sign In", new_user_session_path, :class => "btn btn-success btn-sm"
             =link_to "Sign Up", new_user_registration_path, :class => "btn btn-warning btn-sm"
-      .row
-        .col-md-4
-        - flash.each do |key, value|
-          .alert{ :class => "alert-#{key}" }
-          %button.close{ :data => { :dismiss => "alert" } } x
-          %strong
-            = value
+     
     = yield
     
     
