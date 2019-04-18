@@ -24,15 +24,12 @@
     .row
         .col-md-4.price= "#{number_to_currency(@property.price)}/per month."
 
-        -# - if @property.image.attached?
-        -#     =image_tag(prop.image)
-        -# - else
-        -#     =image_tag 'no_image.jpg'
-
     %br
     %br
 
     .row
         .button-navigate= link_to('Back', rental_properties_path)
-        .button-navigate= link_to('Edit', edit_rental_property_path(@property))
-        .button-navigate= link_to('Remove', rental_property_path(@property), method: :delete)
+        -if user_signed_in?
+            -if current_user.id == @property.user_id
+                .button-navigate= link_to('Edit', edit_rental_property_path(@property))
+                .button-navigate= link_to('Remove', rental_property_path(@property), method: :delete)

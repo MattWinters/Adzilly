@@ -101,7 +101,7 @@ private
 
 private
   def create_update_params
-    params.require(:rental_property).permit(:title, :description, :bedrooms, :beds, :maxpersons, :bathrooms, :pets_allowed, :address, :price, :images)
+    params.require(:rental_property).permit(:title, :description, :bedrooms, :beds, :maxpersons, :bathrooms, :pets_allowed, :address, :price, :user_id, :images)
   end
 
 end

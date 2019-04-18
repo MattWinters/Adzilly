@@ -9,6 +9,7 @@ class CreateRentalProperties < ActiveRecord::Migration[5.1]
       t.decimal :longitude, precision: 15, scale: 10, null: false
       t.string :email
       t.string :industry
+      t.integer :user_id
 
       t.timestamps
     end

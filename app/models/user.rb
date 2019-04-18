@@ -3,14 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :up_down_votes
-  has_many :sights, :through => :up_down_votes
+  has_many :rental_properties
   validates :username, presence: :true, uniqueness: { case_sensitive: false }
   validate :validate_username
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
   attr_accessor :login
-  
+
   def login
     @login || self.username || self.email
   end

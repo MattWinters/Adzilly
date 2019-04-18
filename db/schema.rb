@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_190501) do
     t.decimal "longitude", precision: 15, scale: 10, null: false
     t.string "email"
     t.string "industry"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
