@@ -95,8 +95,25 @@
   background-color: #90C22B;
 }
 
-.devise {
-  font-size: 10px;
+.button-login a:link, .button-login a:visited{
+  font-size: 12px;
+  background-color: #A1D33C; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 1px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: auto;
+}
+
+.button-login a:hover, .button-login a:active {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #90C22B;
 }
 
 .submit input[type=submit], .submit a{
@@ -129,4 +146,13 @@
 
 .description {
   width: 20%
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.user-info {
+  font-size: 12px;
 }
