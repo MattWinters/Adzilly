@@ -51,3 +51,6 @@
         .col-md-offset-1
         - if user_signed_in?
             .col-md-2.button-navigate= link_to('Create a new listing', new_rental_property_path)
+        - else 
+             .col-md-2.button-navigate= link_to('Create a new listing', new_user_registration_path)
+
