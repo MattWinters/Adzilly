@@ -38,14 +38,16 @@
                     %td.details= number_to_human(prop.distance_from(@location), units: {unit: "mi"}) || "Unknown"
                     %td.price= "#{number_to_currency(prop.price)} /per month"
                     %td
+                        -if prop.images.size == 0
+                            =image_tag('no_image.jpg', height: '100', width: '150')
                         - count = 1
                         - prop.images.each do |p|
                             - if count % 3 == 0
                                 -break
                             =image_tag(p, height: '100', width: '150')
                             - count += 1
-                        -# - else
-                        -#     = image_tag 'no_image.jpg', alt: 'none', height: '100', width: '150'
+                       
     .row
         .col-md-offset-1
-        .col-md-2.button-navigate= link_to('Create a new listing', new_rental_property_path)
+        - if user_signed_in?
+            .col-md-2.button-navigate= link_to('Create a new listing', new_rental_property_path)
