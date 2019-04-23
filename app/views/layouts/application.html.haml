@@ -15,10 +15,11 @@
           -# %button.close{ :data => { :dismiss => "alert" } } x
           %strong
             = value
+      
       .row
-        .col-md-4
-          %h1.logo Adzilla
-        .offset-md-6.col-md-2
+        .logo 
+          =link_to "Adzilly", rental_properties_path
+        .offset-md-8.col-md-2
           -if user_signed_in?
             %p
               .button-login
