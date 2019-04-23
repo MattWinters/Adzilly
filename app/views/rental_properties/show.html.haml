@@ -4,7 +4,7 @@
         %h1.header.title= "#{@property.title}"
 
     - count = 0
-    - @property.images.each do |p|
+    - @property.photos.each do |p|
         - count +=1
         .show_image
             =image_tag(p, height: '125', width: '175')

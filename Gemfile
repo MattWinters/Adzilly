@@ -2,10 +2,12 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby '>= 2.6.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 5.2', '>= 5.2.2.1'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,7 +34,7 @@ gem 'geocoder'
 
 gem 'haml', '~> 5.0.4'
 
-gem 'haml-rails'
+gem 'haml-rails', '~> 1.0.0'
 
 # gem to allow images
 gem 'image_processing', '~> 1.2'
