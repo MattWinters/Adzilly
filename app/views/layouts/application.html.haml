@@ -17,9 +17,10 @@
             = value
       
       .row
-        .logo 
-          =link_to "Adzilly", rental_properties_path
-        .offset-md-8.col-md-2
+        .col-md-4.logo 
+          =link_to image_tag("Asset 1.png", :width => 200, :height => 75), rental_properties_path
+          -# =link_to "Adzilly", rental_properties_path
+        .offset-md-6.col-md-2
           -if user_signed_in?
             %p
               .button-login
@@ -44,8 +45,7 @@
         =link_to image_tag( "fb.png", height: '50', width: '50'), 'https://m.me/matt.winters.750'
         =link_to image_tag( "instagram.png", height: '50', width: '50'), 'https://www.instagram.com/mattwinters32/'
       .right
-        =image_tag("Logo-black.png", height: '50', width: '50')
-      -# .right
+        
 
 
 
