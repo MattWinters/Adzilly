@@ -1,7 +1,7 @@
 class RentalProperty < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
-  has_many_attached :images
+  has_many :photos
   belongs_to :user
 
   def self.filter_on_constraints(constraint_hash)
