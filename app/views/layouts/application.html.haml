@@ -25,7 +25,7 @@
             %p
               .button-login
                 .user-info
-                  %span= "hello, #{current_user.username}"
+                  %spanp= "hello, #{current_user.username}"
                 =link_to "logout", destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-sm"
           -else
             %br
@@ -40,7 +40,7 @@
     #footer
       %p= "Contact us:"
       .footer-images
-        =link_to image_tag( "contact.png", height: '50', width: '50'), 'mailto:mwinters@colgate.edu'
+        =link_to image_tag( "contact.png", height: '50', width: '50'), 'mailto:matt.winters@adzilly.com'
         =link_to image_tag( "phone.png", height: '50', width: '50'), 'tel:+1-203-912-6191'
         =link_to image_tag( "fb.png", height: '50', width: '50'), 'https://m.me/matt.winters.750'
         =link_to image_tag( "instagram.png", height: '50', width: '50'), 'https://www.instagram.com/mattwinters32/'

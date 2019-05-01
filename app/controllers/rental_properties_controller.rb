@@ -64,7 +64,9 @@ private
       @filter_location = session[:filter_location]
     end
     if params[:clear]
-      session.clear
+      session[:price].clear
+      session[:miles].clear
+      session[:filter_location].clear
     end
   end
 
@@ -101,7 +103,7 @@ private
 
 private
   def create_update_params
-    params.require(:rental_property).permit(:title, :description, :bedrooms, :beds, :maxpersons, :bathrooms, :pets_allowed, :address, :price, :user_id, :photos)
+    params.require(:rental_property).permit(:title, :description, :bedrooms, :beds, :maxpersons, :bathrooms, :pets_allowed, :address, :price, :user_id, :images [],:photos)
   end
 
 end

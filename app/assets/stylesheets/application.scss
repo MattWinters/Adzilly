@@ -13,7 +13,8 @@
  */
 
  @import "bootstrap";
-
+  
+ 
  .logo{
    padding: 15px 15px 20px 15px;
  }
@@ -51,6 +52,12 @@
   box-sizing: border-box;
 }
 
+.form input[type=checkbox] {
+  width: auto;
+  margin-bottom: .5px;
+  padding-top: 2px;
+}
+
 .form input[type=submit] {
   width: 100%;
   background-color: #A1D33C;
@@ -72,6 +79,9 @@
   padding: 20px;
 }
 
+.checkbox {
+  display: block;
+}
 
 .button-navigate a:link, .button-navigate a:visited {
   background-color: #A1D33C; /* Green */

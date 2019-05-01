@@ -1,24 +1,24 @@
-.filter
-    =form_tag rental_properties_path(action: 'index'), method: "get"
-    =hidden_field_tag :filter, true
-
-    =label_tag :price, "Maximum price"
-    =number_field_tag :price, @price
-
-    =label_tag :industy, "Industry"
-    =text_field_tag :industy, @industry
-
-    =label_tag :miles, "Within"
-    =number_field_tag :miles, @miles
-
-    =label_tag :filter_location, "miles of"
-    =text_field_tag :filter_location, @filter_location
-
-    .submit
-        =submit_tag "Filter"
-        =link_to('Clear', rental_properties_path(:clear => true))
-
 #main.container
+    .filter
+        =form_tag rental_properties_path(action: 'index'), method: "get"
+        =hidden_field_tag :filter, true
+
+        =label_tag :price, "Maximum price"
+        =number_field_tag :price, @price
+
+        =label_tag :industy, "Industry"
+        =text_field_tag :industy, @industry
+
+        =label_tag :miles, "Within"
+        =number_field_tag :miles, @miles
+
+        =label_tag :filter_location, "miles of"
+        =text_field_tag :filter_location, @filter_location
+
+        .submit
+            =submit_tag "Filter"
+            =link_to('Clear', rental_properties_path(:clear => true))
+
     %h3.header Available locations
 
     %table.table
@@ -38,10 +38,10 @@
                     %td.details= number_to_human(prop.distance_from(@location), units: {unit: "mi"}) || "Unknown"
                     %td.price= "#{number_to_currency(prop.price)} /per month"
                     %td
-                        -if prop.photos.size == 0
+                        -if prop.images.size == 0
                             =image_tag('no_image.jpg', height: '100', width: '150')
                         - count = 1
-                        - prop.photos.each do |p|
+                        - prop.images.each do |p|
                             - if count % 3 == 0
                                 -break
                             =image_tag(p, height: '100', width: '150')
@@ -50,7 +50,8 @@
     .row
         .col-md-offset-1
         - if user_signed_in?
-            .col-md-2.button-navigate= link_to('Create a new listing', new_rental_property_path)
+            .col-md-3.button-navigate= link_to('Create a new listing', new_rental_property_path)
         - else 
-            .col-md-2.button-navigate= link_to('Create a new listing', new_user_registration_path)
+            .col-md-3.button-navigate= link_to('Create a new listing', new_user_registration_path)
+        -# =link_to image_tag("Add-btn.png", :width => 50, :height => 50), new_rental_property_path 
 

@@ -1,10 +1,14 @@
 #main.container
     -# .row
     .row
+        -if user_signed_in?
+            .middle
+                .button-navigate= link_to("Buy Now!", "mailto:#{@property.email}")
+    .row
         %h1.header.title= "#{@property.title}"
 
     - count = 0
-    - @property.photos.each do |p|
+    - @property.images.each do |p|
         - count +=1
         .show_image
             =image_tag(p, height: '125', width: '175')
@@ -23,9 +27,13 @@
         .col-md-4.distance= "#{number_to_human(@property.distance_from(@location), units: {unit: 'mi'}) || 'Unknown distance'} away from you."
     .row
         .col-md-4.price= "#{number_to_currency(@property.price)}/per month."
+    .row
+        %br
 
     %br
     %br
+    .row    
+        
 
     .row
         .button-navigate= link_to('Back', rental_properties_path)
@@ -33,3 +41,4 @@
             -if current_user.id == @property.user_id
                 .button-navigate= link_to('Edit', edit_rental_property_path(@property))
                 .button-navigate= link_to('Remove', rental_property_path(@property), method: :delete)
+                

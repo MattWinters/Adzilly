@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 2019_04_23_010515) do
     t.integer "rental_property_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["rental_property_id"], name: "index_photos_on_rental_property_id"
-    t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "rental_properties", force: :cascade do |t|
