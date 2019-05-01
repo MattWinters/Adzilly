@@ -14,7 +14,7 @@ conans = user.rental_properties.create(title: "Conans Gym", description: "We are
 conans.images.attach(io: File.open("app/assets/images/seed-photos/conans/_DSC0845.jpg"), filename: '-DSC0845.jpg', content_type: 'jpg')
 conans.images.attach(io: File.open("app/assets/images/seed-photos/conans/_DSC0847.jpg"), filename: '_DSC0847.jpg', content_type: 'jpg')
 conans.images.attach(io: File.open("app/assets/images/seed-photos/conans/_DSC0848.jpg"), filename: '_DSC0848.jpg', content_type: 'jpg')
-# conans.images.attach(io: File.open("app/assets/images/seed-photos/conans/!!!!!!!!"), filename: '!!!!!!!.JPG', content_type: 'jpg')
+
 
 fr = RentalProperty.create!(title: "Flight Room Fitness", industry: "Health/fitness", description: "High end cross training facility with around 200 active daily members.", price: 75, address: "333 Pulaski St, Syracuse, NY 13204", email:"FlightRoomSyracuse@gmail.com", latitude: 43.059960, longitude: -76.173920, user_id: user.id)
 fr.images.attach(io: File.open("app/assets/images/seed-photos/flightRoom/IMG_3369.JPG"), filename: 'IMG_3369.JPG', content_type: 'jpg')
