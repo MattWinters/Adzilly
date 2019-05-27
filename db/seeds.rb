@@ -46,6 +46,6 @@ absolute.images.attach(io: File.open("app/assets/images/seed-photos/cross/abs3.j
 
 
 crossfit = RentalProperty.create!(title: "Crossfit Result", industry: "Health/fitness", description: "We are a fully certified Cross Fit gym located in Westchester county. Our members range from 20 - 60 years old. The majority of our members are between 20 and 30", price: 80, address: "5 Plain Av, New Rochelle, NY 10801", email:"Sheaw@crossfitresult.com", latitude: 40.928091, longitude: -73.771663, user_id: user.id)
-crossfit.images.attach(io: File.open("app/assets/images/seed-photos/absolute/IMG-3486"), filename: 'IMG-3486.PNG', content_type: 'png')
+# crossfit.images.attach(io: File.open("app/assets/images/seed-photos/absolute/IMG-3486"), filename: 'IMG-3486.PNG', content_type: 'png')
 crossfit.images.attach(io: File.open("app/assets/images/seed-photos/absolute/IMG-3488.png"), filename: 'IMG-3488.PNG', content_type: 'png')
 crossfit.images.attach(io: File.open("app/assets/images/seed-photos/absolute/IMG-3489.png"), filename: 'IMG-3489.PNG', content_type: 'png')

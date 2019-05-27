@@ -2,8 +2,7 @@
     -# .row
     .row
         -if user_signed_in?
-            .middle
-                .button-navigate= link_to("Buy Now!", "mailto:#{@property.email}")
+            .button-navigate= link_to("Buy Now!", "mailto:#{@property.email}")
     .row
         %h1.header.title= "#{@property.title}"
 
