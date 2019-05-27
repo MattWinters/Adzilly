@@ -1,0 +1,19 @@
+%div.field= f.label :title
+=f.text_field :title
+
+%div.field=f.label :description
+=f.text_field :description
+
+%div.field=f.label :address
+=f.text_field :address
+
+%div.field= f.label "E-mail"
+=f.text_field :email
+
+%div.field= f.label "Price"
+=f.number_field :price
+
+%div.field= f.label "Image"
+=f.file_field :images
+
+= f.hidden_field :user_id, :value => current_user.id
