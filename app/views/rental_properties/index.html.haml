@@ -2,6 +2,10 @@
     .filter
         =form_tag rental_properties_path(action: 'index'), method: "get"
         =render "create_filter_form"
+        .submit
+            =submit_tag "Filter"
+            =link_to('Clear', rental_properties_path(:clear => true))
+        %p= "hello"
 
     %h3.header Available locations
 
