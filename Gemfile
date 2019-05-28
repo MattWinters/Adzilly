@@ -41,7 +41,7 @@ gem 'haml-rails', '~> 1.0.0'
 gem 'image_processing', '~> 1.2'
 
 # Image Hosting
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk'
 gem 'jquery-rails'
 gem 'figaro'
 
