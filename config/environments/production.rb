@@ -1,6 +1,6 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'Adzilla.com', port: 80 }
-  
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -95,6 +95,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Store files locally.
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
 end
