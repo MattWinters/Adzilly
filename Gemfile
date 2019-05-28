@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap', '~> 4.3.1'
 
+# authentication
 gem 'devise'
 
 gem 'geocoder'
@@ -38,6 +39,11 @@ gem 'haml-rails', '~> 1.0.0'
 
 # gem to allow images
 gem 'image_processing', '~> 1.2'
+
+# Image Hosting
+gem 'aws-sdk', '~> 2'
+gem 'jquery-rails'
+gem 'figaro'
 
 gem 'jquery-rails'
 
