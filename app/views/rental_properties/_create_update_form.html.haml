@@ -13,7 +13,7 @@
 %div.field= f.label "Price"
 =f.number_field :price
 
-%div.field= f.label "Image"
-=f.file_field :images
+%div.field= f.label :image_url
+=f.file_field :image_url
 
 = f.hidden_field :user_id, :value => current_user.id
