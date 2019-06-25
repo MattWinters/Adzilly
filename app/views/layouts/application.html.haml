@@ -19,19 +19,22 @@
       .row
         .col-md-4.logo
           =link_to image_tag("logo_plain.png", :width => 200, :height => 75), rental_properties_path
-          -# =link_to "Adzilly", rental_properties_path
-        .offset-md-6.col-md-2
-          -if user_signed_in?
+        -if user_signed_in?
+          .col-md-2
             %p
               .button-login
                 .user-info
                   %spanp= "hello, #{current_user.username}"
                 =link_to "logout", destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-sm"
-          -else
-            %br
-            .button-login
-              =link_to "Sign In", new_user_session_path, :class => "btn btn-success btn-sm"
-              =link_to "Sign Up", new_user_registration_path, :class => "btn btn-warning btn-sm"
+        
+        -else
+          .col-md-8
+            =link_to("Sign Up", new_user_registration_path, :class => "button-header-navigation")
+            =link_to("Sign In", new_user_session_path, :class => "button-header-navigation")
+            =link_to('Listings', rental_properties_path, :class => "button-header-navigation")
+            =link_to("About", about_path, :class => "button-header-navigation")
+            
+           
 
     = yield
 

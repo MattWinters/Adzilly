@@ -84,6 +84,24 @@
   display: block;
 }
 
+a.button-header-navigation{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 120px;
+  float: right;
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+  vertical-align: middle;
+  color: black;
+
+}
+
+a:hover.button-header-navigation, a:active.button-header-navigation {
+  background: black;
+  color: #A1D33C;
+  text-decoration: none;
+}
+
 .button-navigate a:link, .button-navigate a:visited {
   background-color: #A1D33C; /* Green */
   border: none;
