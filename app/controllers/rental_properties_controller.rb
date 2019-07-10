@@ -55,6 +55,8 @@ class RentalPropertiesController < ApplicationController
     redirect_to rental_properties_path
   end
 
+  def l
+  end
 private
   def update_session
     filterParams = [:bathrooms, :price, :maxpersons, :miles, :filter_location, :filter, :clear]
