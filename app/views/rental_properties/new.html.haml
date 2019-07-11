@@ -1,8 +1,7 @@
 #main.container
     .form
-        =form_for RentalProperty.new do |f|
+        =form_with(model: RentalProperty.new, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f|
             =render "create_update_form", f: f
-
             =f.submit
 
     .row

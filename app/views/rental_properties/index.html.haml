@@ -19,7 +19,7 @@
         .submit
             =submit_tag "Filter"
             =link_to('Clear', rental_properties_path(:clear => true))
-        %p= "hello again"
+       
 
     %h3.header Available locations
 
@@ -39,15 +39,10 @@
                     %td.description= truncate(prop.description,length: 60)
                     %td.details= number_to_human(prop.distance_from(@location), units: {unit: "mi"}) || "Unknown"
                     %td.price= "#{number_to_currency(prop.price)} /per month"
-                    %td
-                        -if prop.images.size == 0
-                            =image_tag('no_image.jpg', height: '100', width: '150')
-                        - count = 1
-                        - prop.images.each do |p|
-                            - if count % 3 == 0
-                                -break
-                            =image_tag(p, height: '100', width: '150')
-                            - count += 1
+                    - if prop.image_url
+                        %td.images= image_tag prop.image_url
+                    - else
+                        %td.images= image_tag "https://adamportfolio64.s3.us-east-2.amazonaws.com/1560185797201.jpg"
 
     .row
         .col-md-offset-1

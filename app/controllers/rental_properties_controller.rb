@@ -1,4 +1,7 @@
 class RentalPropertiesController < ApplicationController
+  before_action :set_Rental_Property, only: [:show, :edit, :update, :destroy]
+  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+
   def index
     update_session
     @location = get_location
@@ -52,6 +55,8 @@ class RentalPropertiesController < ApplicationController
     redirect_to rental_properties_path
   end
 
+  def l
+  end
 private
   def update_session
     filterParams = [:bathrooms, :price, :maxpersons, :miles, :filter_location, :filter, :clear]
@@ -103,7 +108,7 @@ private
 
 private
   def create_update_params
-    params.require(:rental_property).permit(:title, :description, :address, :price, :user_id, :images)
+    params.require(:rental_property).permit(:title, :description, :address, :price, :user_id, :image_url)
   end
 
 end
