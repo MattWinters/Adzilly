@@ -31,9 +31,9 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
-  ENV['AWS_ACCESS_KEY_ID'] = "AKIAIGFJ6RFXWVJTC6YQ"
-  ENV['AWS_SECRET_ACCESS_KEY'] = "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"
-  ENV['S3_BUCKET'] = "adamportfolio64"
+  ENV['AWS_ACCESS_KEY_ID'] = "AKIA3N6MIQQGYN6CPSMN"
+  ENV['AWS_SECRET_ACCESS_KEY'] = "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"
+  ENV['S3_BUCKET'] = "adzilly"
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.

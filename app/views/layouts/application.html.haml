@@ -18,7 +18,7 @@
 
       .row
         .col-sm-4.logo
-          =link_to image_tag("logo_plain.png", :width => 200, :height => 75), rental_properties_path
+          =link_to image_tag("logo_plain.png", :width => 200, :height => 75), home_path
         -if user_signed_in?
           .col-md-2
             %p
@@ -26,15 +26,15 @@
                 .user-info
                   %spanp= "hello, #{current_user.username}"
                 =link_to "logout", destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-sm"
-        
+
         -else
           .col-sm-8
-            
+
             =link_to("Sign Up", new_user_registration_path, :class => "button-header-navigation")
             =link_to("Sign In", new_user_session_path, :class => "button-header-navigation")
             =link_to('Listings', rental_properties_path, :class => "button-header-navigation")
             =link_to("About", home_path(anchor: 'about'), :class => "button-header-navigation")
-          
+
           %button.dropbtn{:onclick => "myFunction()"} Dropdown
 
           #myDropdown.dropdown-content
@@ -42,7 +42,7 @@
             =link_to('Listings', rental_properties_path)
             =link_to("Sign In", new_user_session_path)
             =link_to("Sign Up", new_user_registration_path)
-           
+
 
     = yield
 

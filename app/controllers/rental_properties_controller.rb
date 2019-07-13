@@ -1,5 +1,5 @@
 class RentalPropertiesController < ApplicationController
-  before_action :set_Rental_Property, only: [:show, :edit, :update, :destroy]
+  # before_action :set_Rental_Property, only: [:show, :edit, :update, :destroy]
   before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   def index

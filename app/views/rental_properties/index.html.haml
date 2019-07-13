@@ -19,7 +19,7 @@
         .submit
             =submit_tag "Filter"
             =link_to('Clear', rental_properties_path(:clear => true))
-       
+
 
     %h3.header Available locations
 
@@ -40,9 +40,9 @@
                     %td.details= number_to_human(prop.distance_from(@location), units: {unit: "mi"}) || "Unknown"
                     %td.price= "#{number_to_currency(prop.price)} /per month"
                     - if prop.image_url
-                        %td.images= image_tag prop.image_url
+                        %td.images= image_tag "https://adzilly.s3.us-east-2.amazonaws.com/no_image.jpeg"
                     - else
-                        %td.images= image_tag "https://adamportfolio64.s3.us-east-2.amazonaws.com/1560185797201.jpg"
+                        %td.images= image_tag "https://adzilly.s3.us-east-2.amazonaws.com/no_image.jpeg"
 
     .row
         .col-md-offset-1
