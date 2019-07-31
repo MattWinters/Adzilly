@@ -1,0 +1,19 @@
+<%= form_tag rental_properties_path(action: 'index'), method: "get", remote: true %>
+  <%= hidden_field_tag :filter, true %>
+
+  <%= label_tag :price, "Maximum price" %>
+  <%= number_field_tag :price, @price %>
+
+  <%= label_tag :industry %>
+  <%= select_tag :industry, options_for_select(@indusries_for_selest) %>
+
+  <%= label_tag :miles, "Within" %>
+  <%= number_field_tag :miles, @miles %>
+
+  <%= label_tag :filter_location, "miles of" %>
+  <%= text_field_tag :filter_location, @filter_location %>
+
+  <div class="submit">
+    <%= submit_tag "Filter" %>
+    <%= link_to('Clear', rental_properties_path(:clear => true)) %>
+  </div>

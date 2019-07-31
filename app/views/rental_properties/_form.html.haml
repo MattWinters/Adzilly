@@ -1,7 +1,0 @@
--# %form-container
--#   = form_with(model: @rental_property, local: true,  html: { class: 'directUpload',data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host }}) do |form|
--#     =form.label :image, "Image"
--#     =form.file_field :image_url
-
--#     .field
--#       = form.submit "Create Post"
