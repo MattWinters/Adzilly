@@ -1,0 +1,75 @@
+<div class="mainbody">
+  <div class="search_area">
+    <h1>Browse through our listings of fitness centers today.</h1>
+    <%= link_to rental_properties_path, :action => 'go' do %>
+      <div class="search_bar">
+        <div class="search_text">Find Your Spot...</div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="cities row">
+  <div class="offset-sm-1 col-sm-2">
+    <p>Syracuse</p>
+  </div>
+  <div class="offset-sm-2 col-sm-2">
+    <p>Fairfield County</p>
+  </div>
+  <div class="offset-sm-2 col-sm-2">
+    <p>Westchester</p>
+  </div>
+</div>
+<div id="about">
+  <div class="row">
+    <div class="slogan-section">
+      <h1>Connecting Brands in Health and Fitness</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-6 about-container">
+      <div class="about-title">
+        <h1>About</h1>
+      </div>
+      <div class="about-text">
+        <p>Adzilly is an innovative online platform focused on brand collaboration in the health and fitness industry. We are building an ecosystem to connect brands with other businesses that share a similar customer base. We specialize in experiential campaigns, product placement and print promotions. The physical marketing channel we have established is targeted, affordable and captures consumers at the right place and in the right time.</p>
+        <div class="button-navigate">
+          <%= link_to("Get in touch", "mailto: matt.winters@adzilly.com") %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 about-container">
+      <div class="about-video">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="315" src="https://www.youtube.com/embed/J38fk16dllM" width="560"></iframe>
+      </div>
+    </div>
+  </div>
+  <div id="meet-the-founders">
+    <div class="row">
+      <div class="meet-us">
+        <div class="meet-us-text">
+          <h1>Meet The Founders</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-xl-3 col-xl-3">
+        <div class="meet-us-headshot">
+          <%= image_tag("winters_headshot.png", height: '300', width: '300') %>
+        </div>
+        <div class="meet-us-info">
+          <h2>Matt Winters</h2>
+          <p>Co-Founder</p>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="meet-us-headshot">
+          <%= image_tag("AbtHeadshot.png", height: '300', width: '275') %>
+        </div>
+        <div class="meet-us-info">
+          <h2>Matthew Abt</h2>
+          <p>Co-Founder</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

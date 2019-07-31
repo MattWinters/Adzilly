@@ -1,0 +1,60 @@
+<div class="container" id="main">
+  <div class="row">
+    <% if user_signed_in? %>
+      <div class="button-navigate">
+        <%= link_to("Buy Now!", "mailto:#{@rental_property.email}") %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <h1 class="header title">
+      <%= @rental_property.title %>
+    </h1>
+  </div>
+  <% count = 0 %>
+  <% @rental_property.images.each do |p| %>
+    <% count +=1 %>
+    <div class="show_image">
+      <%= image_tag(p, height: '125', width: '175') %>
+    </div>
+    <% if count % 3 == 0 %>
+      <br/>
+    <% end %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-offset-2"></div>
+    <div class="col-md-8 description">
+      <%= @rental_property.description %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-2"></div>
+    <div class="col-md-8 description">
+      <%= "The property is located at #{@rental_property.address}" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-2"></div>
+    <div class="col-md-4 distance">
+      <%= "#{number_to_human(@rental_property.distance_from(@location), units: {unit: 'mi'}) || 'Unknown distance'} away from you." %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 price">
+      <% "{number_to_currency(@rental_property.price)}/per month." %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="button-navigate">
+      <%= link_to('Back', rental_properties_path) %>
+    </div>
+    <% if current_user&.id == @rental_property.user_id %>
+      <div class="button-navigate">
+        <%= link_to('Edit', edit_rental_property_path(@rental_property)) %>
+      </div>
+      <div class="button-navigate">
+        <%= link_to('Remove', rental_property_path(@rental_property), method: :delete) %>
+      </div>
+    <% end %>
+  </div>
+</div>

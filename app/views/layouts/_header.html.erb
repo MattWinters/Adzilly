@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <% flash.each do |key, value| %>
+      <div class="alert-<%= key %> alert"></div>
+      <strong>
+        <%= value %>
+      </strong>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 logo">
+      <%= link_to image_tag("logo_plain.png", :width => 200, :height => 75), root_path %>
+    </div>
+    <% if user_signed_in? %>
+      <div class="col-md-2">
+        <div class="button-login">
+          <div class="user-info">
+            <span>
+              <%= "hello, #{current_user.username}" %>
+            </span>
+          </div>
+          <%= link_to 'logout', destroy_user_session_path, method: :delete, :class => 'btn btn-primary btn-sm' %>
+        </div>
+      </div>
+    <% else %>
+      <div class="col-sm-8">
+        <%= link_to('Sign Up', new_user_registration_path, :class => 'button-header-navigation') %>
+        <%= link_to('Sign In', new_user_session_path, :class => 'button-header-navigation') %>
+        <%= link_to('Listings', rental_properties_path, :class => 'button-header-navigation') %>
+        <%= link_to('About', root_path(anchor: 'about'), :class => 'button-header-navigation') %>
+      </div>
+      <button class="dropbtn" onclick="myFunction()">Dropdown</button>
+      <div class="dropdown-content" id="myDropdown">
+        <%= link_to('About', root_path(anchor: 'about')) %>
+        <%= link_to('Listings', rental_properties_path) %>
+        <%= link_to('Sign In', new_user_session_path) %>
+        <%= link_to('Sign Up', new_user_registration_path) %>
+      </div>
+    <% end %>
+  </div>
+</div>

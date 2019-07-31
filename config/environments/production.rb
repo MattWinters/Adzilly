@@ -99,4 +99,7 @@ Rails.application.configure do
   # Store files locally.
   config.active_storage.service = :local
 
+  # Store files amazon.
+  # config.active_storage.service = :amazon
+
 end

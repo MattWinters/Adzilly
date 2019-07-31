@@ -1,0 +1,29 @@
+<%= form_for(@rental_property, remote: true) do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, type: "text", required: "true" %>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description, type: "text", required: "true" %>
+  </div>
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address, type: "text", required: "true" %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email, type: "text", required: "true" %>
+  </div>
+  <div>
+    <%= form.label :price %>
+    <%= form.text_field :price, type: "integral", required: "true" %>
+  </div>
+  <div>
+    <%= form.label :industry %>
+    <%= form.select(:industry, options_for_select(@indusries_for_selest)) %>
+  </div>
+  <div>
+    <%= form.submit "Create Rental property", type: "submit" %>
+  </div>
+<% end %>

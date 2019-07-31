@@ -1,0 +1,29 @@
+<% flash.each do |key, value| %>
+  <div class="alert-<%= key %> alert"></div>
+<% end %>
+<button class="close" type="submit"><% :data => { :dismiss => "alert" } %></button>
+<strong>
+  <%= value %>
+    <% if user_signed_in? %>
+      <% if current_user.id != @property.user_id %>
+        <% redirect_to rental_property_path(@property) %>
+      <% end %>
+    <% else %>
+      <% redirect_to rental_property_path(@property) %>
+  <% end %>
+</strong>
+<div class="container" id="main">
+  <div class="form">
+    <%= form_for @property, :method => :patch do |f| %>
+      <%= render "create_update_form", f: f %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="middle">
+    <div class="button-navigate">
+      <%= link_to('cancel changes', rental_property_path(@property)) %>
+    </div>
+  </div>
+</div>
