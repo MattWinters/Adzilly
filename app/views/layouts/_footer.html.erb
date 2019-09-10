@@ -1,0 +1,25 @@
+<footer>
+  <div class="footer__contacts-information">
+    <p class="footer__contacts_title">Phone:
+      <br>
+      <span class="footer__contacts">203 912 6191</span>
+    </p>
+    <p class="footer__contacts_title">Email:
+      <br>
+      <span class="footer__contacts">
+        <%= link_to("matt.winters@adzilly.com", "mailto: matt.winters@adzilly.com", class:"footer__email-link") %>
+      </span>
+     </p>
+    <div class="footer__container-links">
+      <%= link_to 'https://www.facebook.com/adzilly/',class:"footer__social_links" do %>
+        <%= image_tag("iconmonstr-facebook-6.svg", class:"footer__link_icons") %>
+      <% end %>
+      <%= link_to 'https://www.instagram.com/adzilly_/',class:"footer__social_links" do %>
+        <%= image_tag("instagram-logo.svg", class:"footer__link_icons") %>
+      <% end %>
+      <%= link_to 'https://www.linkedin.com/company/14813534/admin/',class:"footer__social_links" do %>
+        <%= image_tag("linkedin-logo.svg", class:"footer__link_icons") %>
+      <% end %>
+    </div>
+  </div>
+</footer>

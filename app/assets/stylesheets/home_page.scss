@@ -1,0 +1,888 @@
+.home__general-block {
+  width: 100%;
+  background: linear-gradient(to left, #A1D33C 20%, #000 10%);
+  height: calc(100vh - 80px);
+  padding-top: 50px;
+  box-sizing: border-box;
+  max-height: 1500px;
+  display: flex;
+
+  .home__general-block-vertical-centering {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .home__description {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    width: 100%;
+  }
+
+  .home__cities-name {
+    writing-mode: tb-rl;
+    transform:rotate(180deg);
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 30px;
+    font-size: 20px;
+    font-family: RalewayRegular;
+  }
+
+  .home__title-text-green {
+    color: #A1D33C;
+  }
+
+  .home__title-text {
+    color: #fff;
+    font-size: 100px;
+    z-index: 10;
+    position: relative;
+    white-space: nowrap;
+    font-family: RalewayRegular-bold;
+    margin: 0px 0px 40px 0px;
+    line-height: 114px;
+  }
+
+  .home__link-watch-introduction {
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    z-index: 10;
+    position: relative;
+    font-family: RalewayRegular;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+
+    &:hover {
+      color: #A1D33C;
+    }
+  }
+
+  .home__introduction-image {
+    height: 70px;
+    margin-right: 40px;
+  }
+
+  .home__title-block-image {
+    position: absolute;
+    bottom: 0;
+    width: 924px;
+    right: 100px;
+    max-width: 924px;
+    max-height: 686px;
+    object-fit: cover;
+  }
+
+  .home__title {
+    height: 100%;
+    width: 50%;
+    max-height: 757px;
+    max-width: 955px;
+    background-color: #262626;
+    padding: 124px 0px 100px 270px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .home__title-block {
+    width: 100%;
+    position: relative;
+    max-height: 757px;
+  }
+
+  .home__find-your-spot-arrow {
+    width: 24px;
+    height: 45px;
+    margin-left: 15px;
+  }
+
+  .home__find-your-spot {
+    background-color: #37474f;
+    padding: 18px 60px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+  }
+
+  .home__bottom-description {
+    color: #fff;
+    width: 100%;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: RalewayRegular;
+    box-sizing: border-box;
+  }
+}
+
+.home__about {
+  text-align: center;
+  margin-top: 100px;
+
+  .home__about-title {
+    margin-bottom: 50px;
+    font-weight: 800;
+    font-size: 56px;
+    font-family: RalewayRegular-bold;
+  }
+
+  .home__about-description-link {
+    margin-top: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 20px 60px;
+    background-color: #37474f;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+      color: #a1d33c;
+    }
+  }
+
+  .home__about-description {
+    padding: 90px 338px 20px 337px;
+    font-family: RalewayRegular;
+  }
+
+  .home__about-description-text {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .home__slider-navigations {
+    margin: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  #home__button-slider-left {
+    transform: rotate(180deg);
+  }
+
+  .home__about-slider {
+    min-height: 750px;
+    width: 60%;
+    background-color: #f5f7fb;
+    text-align: left;
+    position: relative;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .home__button-slider {
+    height: 80px;
+    width: 100%;
+    background-color: #a1d33c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15%;
+    box-sizing: border-box;
+  }
+
+  .home__about-category-items {
+    margin: 0px 80px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      height: 100px;
+      content: "";
+      width: 10px;
+      left: -40px;
+    }
+
+    &:nth-child(1):before {
+        background: linear-gradient(to top, #37474F 30%, #A1D33C 10%);
+    }
+
+    &:nth-child(2):before {
+        background: linear-gradient(to top, #000 30%, #37474F 10%);
+    }
+
+    &:nth-child(3):before {
+        background: linear-gradient(to top, #A1D33C 30%, #000 10%);
+    }
+  }
+
+  .home__about-category {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 36px;
+    text-align: left;
+    margin-bottom: 60px;
+    font-family: RalewayRegular-bold;
+  }
+
+  .home__slider-block {
+    position: absolute;
+    width: 65%;
+    height: auto;
+    bottom: 0px;
+    right: -450px;
+    max-height: 584px;
+    height: 100%;
+  }
+
+  .home__slider-image {
+    width: 100%;
+    max-height: 584px;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0px;
+    height: 100%;
+  }
+}
+
+.home__founders {
+  text-align: center;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .home__founders-title {
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-size: 56px;
+    width: 100%;
+    font-family: RalewayRegular-bold;
+  }
+
+  .home__founders-items {
+    width: 45%;
+    height: 880px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .home__founders-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 440px;
+  }
+
+  .home__founders-block-image {
+    width: 50%;
+    height: 100%;
+  }
+
+  .home__founders-image {
+    object-fit: cover;
+    height: 440px;
+    width: 100%;
+  }
+
+  .home__founders-author {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+
+  .home__founders-name {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 54px;
+    position: relative;
+    text-align: left;
+    font-family: RalewayRegular;
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 60px;
+      background-color: #a1d33c;
+      bottom: -8px;
+      left: 0px;
+    }
+  }
+
+  .home__founders-name-describe {
+    font-weight: 500;
+    font-size: 22px;
+    font-family: RalewayRegular;
+  }
+
+  .home__founders-right-background {
+    width:55%;
+    height: 880px;
+  }
+
+  .home__founders-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media all and (max-width: 1800px) {
+  .home__founders {
+
+    .home__founders-right-background {
+     height: 600px;
+    }
+
+    .home__founders-items {
+      height: 600px;
+    }
+
+    .home__founders-item {
+      height: 300px;
+    }
+
+    .home__founders-block-image {
+      width: 50%;
+      height: 100%;
+    }
+
+    .home__founders-image {
+     object-fit: cover;
+     height: 300px;
+     width: 100%;
+    }
+  }
+
+  .home__general-block {
+
+    .home__title-block {
+      height: 70vh;
+    }
+
+    .home__title {
+      padding: 50px 0px 20px 200px;
+    }
+
+    .home__title-text {
+      font-size: 80px;
+      line-height: 95px;
+    }
+
+    .home__title-block-image {
+      max-height: 610px;
+      height: 510px;
+      width: 50vw;
+    }
+  }
+}
+
+@media all and (max-width: 1500px) {
+
+  .home__general-block {
+
+    .home__title-block {
+       max-height: 458px;
+    }
+
+    .home__title {
+      padding: 100px 0px 100px 140px;
+    }
+
+    .home__title-block-image {
+      max-height: 400px;
+      width: 45vw;
+    }
+
+    .home__description {
+      padding-top: 0px;
+    }
+
+    .home__title-text {
+      font-size: 72px;
+      line-height: 75px;
+    }
+
+    .home__introduction-image {
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .home__cities-name {
+      font-size: 16px;
+      padding: 100px 30px 20px;
+    }
+  }
+
+  .home__about {
+
+    .home__about-category-items {
+      margin:0 40px;
+    }
+
+    .home__about-slider {
+      min-height: 600px;
+    }
+
+    .home__about-description {
+      padding: 60px 240px 0 150px;
+    }
+
+    .home__slider-block {
+      right: -50%;
+      max-height: 450px;
+    }
+  }
+}
+
+@media all and (max-width: 1250px) {
+
+  .home__general-block {
+
+    .home__title-block {
+      height: 450px;
+    }
+
+    .home__title {
+      padding: 50px 0px 20px 140px;
+    }
+
+    .home__title-text {
+      font-size: 50px;
+    }
+  }
+
+  .home__about .home__about-description {
+    padding: 60px 240px 80px 150px;
+  }
+}
+
+@media all and (max-width: 1024px) {
+
+  .home__general-block {
+    padding-top: 0px;
+    height: 1500px;
+
+    .home__general-block-vertical-centering {
+      flex-direction: column-reverse;
+      margin: 0px;
+    }
+
+    .home__cities-name {
+      writing-mode: horizontal-tb;
+      transform: none;
+      background: #262626;
+      padding: 40px 0px;
+      font-size: 28px;
+    }
+
+    .home__description {
+      height: 100%;
+    }
+
+    .home__title-block {
+      min-height: calc(100% - 125px);
+    }
+
+    .home__title {
+      max-width: 1090px;
+      width: 90%;
+      position: relative;
+      z-index: 2;
+      padding: 0px 0px 20px 60px;
+    }
+
+    .home__title-block-image {
+      width: 100%;
+      left: 0px;
+      max-width: 100%;
+      max-height: 650px;
+      height: 650px;
+    }
+
+    .home__bottom-description {
+      justify-content: space-between;
+      font-size: 28px;
+      padding: 0px 0px 0px 25px;
+      height: 130px;
+    }
+
+    .home__find-your-spot {
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .home__title-text {
+      font-size: 100px;
+      line-height: 120px;
+    }
+
+    .home__introduction-image {
+      height: 75px;
+    }
+
+    .home__link-watch-introduction {
+      font-size: 35px;
+    }
+  }
+
+  .home__about {
+
+    .home__about-description {
+      padding: 60px 140px 80px 46px;
+    }
+
+    .home__about-slider {
+      width: 65%;
+    }
+
+    .home__slider-block {
+      right: -54%;
+      max-height: 465px;
+      width: 70%;
+    }
+
+    .home__about-description-text {
+      line-height: 33px;
+    }
+
+    .home__about-category-items {
+      font-size: 24px;
+
+      &::before {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .home__founders {
+
+    .home__founders-items {
+      width: 100%;
+      height: 1000px;
+    }
+
+    .home__founders-item, .home__founders-image {
+      height: 500px;
+    }
+
+    .home__founders-author {
+      padding-left: 60px;
+    }
+
+    .home__founders-right-background {
+      width: 100%;
+      height: 800px;
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+
+  .home__general-block {
+    height: 1200px;
+
+    .home__title-text {
+      font-size: 60px;
+      line-height: 70px;
+    }
+
+    .home__title {
+      max-height: 550px;
+    }
+
+    .home__introduction-image {
+      height: 50px;
+    }
+
+    .home__link-watch-introduction {
+      font-size: 28px;
+    }
+
+    .home__bottom-description {
+      font-size: 18px;
+      height: 90px;
+    }
+
+    .home__cities-name {
+      font-size: 20px;
+    }
+
+    .home__title-block-image {
+      max-height: 500px;
+    }
+
+    .home__title-block {
+      min-height: calc(100% - 75px);
+    }
+  }
+
+  .home__about {
+
+    .home__slider-block {
+      right: -54%;
+      max-height: 300px;
+      width: 70%;
+    }
+
+    .home__about-description-text {
+      line-height: 20px;
+      font-size: 16px;
+    }
+
+    .home__about-category-items {
+      font-size: 20px;
+
+      &::before {
+        top: 50%;
+        transform: translateY(-50%);
+        height: 69px;
+        width: 7px;
+        left: -20px;
+      }
+    }
+
+    .home__about-title {
+      font-size: 40px;
+    }
+  }
+
+  .home__founders {
+
+    .home__founders-items {
+      height: 700px;
+    }
+
+    .home__founders-item, .home__founders-image {
+      height: 350px;
+    }
+
+    .home__founders-author {
+      padding-left: 20px;
+    }
+
+    .home__founders-right-background {
+      width: 100%;
+      height: 500px;
+    }
+
+    .home__founders-title {
+      font-size: 40px;
+    }
+  }
+}
+
+
+@media all and (max-width: 600px) {
+
+  .home__general-block {
+    max-height: 750px;
+
+    .home__title-text {
+      font-size: 40px;
+      line-height: 46px;
+      margin-bottom: 25px;
+    }
+
+    .home__link-watch-introduction {
+      font-size: 14px;
+    }
+
+    .home__introduction-image {
+      height: 30px;
+    }
+
+    .home__title,   .home__title-block-image {
+      max-height: 350px;
+    }
+
+    .home__bottom-description {
+      font-size: 12px;
+      padding: 0 0 0 15px;
+      height: 80px;
+    }
+
+    .home__find-your-spot {
+      padding: 10px 35px
+    }
+
+    .home__cities-name {
+      font-size: 14px;
+      padding: 20px 0px;
+    }
+  }
+
+  .home__about {
+    margin-top: 50px;
+
+    .home__about-title {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .home__about-category-items {
+      font-size: 14px;
+      margin: 0 20px;
+
+      &::before {
+        height: 45px;
+        width: 5px;
+        left: -10px;
+      }
+    }
+
+    .home__about-description {
+      padding: 45px 100px;
+    }
+
+    .home__about-description-text {
+      line-height: 18px;
+      font-size: 12px;
+    }
+
+    .home__about-description-link {
+      padding: 10px 16px;
+      font-size: 12px;
+      display: inline-block;
+    }
+
+    .home__about-slider {
+      min-height: 320px;
+      width: 100%;
+    }
+
+    .home__slider-block, .home__slider-navigations, .home__button-slider {
+      display: none;
+    }
+  }
+
+  .home__founders {
+
+    .home__founders-title {
+      font-size: 30px;
+    }
+
+    .home__founders-items {
+      height: 500px;
+    }
+
+    .home__founders-item, .home__founders-image {
+      height: 250px;
+    }
+
+    .home__founders-name {
+      font-size: 25px;
+      margin-top: 0px;
+    }
+
+    .home__founders-name-describe {
+      font-size: 18px;
+    }
+
+    .home__founders-right-background {
+      height: 300px;
+    }
+  }
+}
+
+@media all and (max-width: 400px) {
+
+  .home__general-block {
+    max-height: 580px;
+
+    .home__title {
+      padding-left: 20px;
+      max-height: 280px;
+    }
+
+    .home__find-your-spot {
+      padding: 10px 10px;
+    }
+
+    .home__bottom-description {
+      padding: 0 0 0 5px;
+    }
+
+    .home__title-block-image {
+      max-height: 250px;
+    }
+
+    .home__cities-name {
+      font-size: 12px;
+    }
+  }
+
+  .home__about {
+
+    .home__about .home__about-title {
+      font-size: 24px;
+    }
+
+    .home__about-category-items {
+      font-size: 12px;
+      margin: 0 15px;
+    }
+
+    .home__about-description {
+      padding: 40px 50px;
+    }
+
+    .home__about-description-text {
+      line-height: 16px;
+      font-size: 10px;
+    }
+
+    .home__about-slider {
+      margin-top: 50px;
+    }
+  }
+
+  .home__founders {
+    margin-top: 30px;
+
+    .home__founders-title {
+      font-size: 24px;
+    }
+
+    .home__founders-items {
+      height: 350px;
+    }
+
+    .home__founders-item, .home__founders-image {
+      height: 175px;
+    }
+
+    .home__founders-name {
+      font-size: 20px;
+    }
+
+    .home__founders-name-describe {
+      font-size: 16px;
+    }
+
+    .home__founders-right-background {
+      height: 280px;
+    }
+  }
+}

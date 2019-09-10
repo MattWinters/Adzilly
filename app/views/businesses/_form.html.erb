@@ -1,0 +1,73 @@
+<%= form_for(@business, remote: true) do |f| %>
+
+  <div class="new-business__field-text-block">
+    <%= f.label :title, class: "new-business__label" %>
+    <%= f.text_field :title, type: "text", required: "true", class: "new-business__field" %>
+  </div>
+  <div class="new-business__field-text-block">
+    <%= f.label :description, class: "new-business__label" %>
+    <%= f.text_area :description, type: "text", required: "true", class: "new-business__field new-business__field-description" %>
+  </div>
+  <div class="new-business__field-text-block">
+    <div class="new-business__row">
+      <%= f.label :email, class: "new-business__label" %>
+      <%= f.text_field :email, type: "text", required: "true", class: "new-business__field" %>
+    </div>
+    <div class="new-business__row">
+      <%= f.label :price, class: "new-business__label" %>
+      <%= f.text_field :price, type: "integral", required: "true", class: "new-business__field" %>
+    </div>
+  </div>
+  <div class="new-business__field-text-block new-business__field-text-block-select">
+    <div class="new-business__industry-male-female">
+      <%= f.label :industry, class: "new-business__label" %>
+      <%= f.select(:industry, options_for_select(@indusries_for_selest)) %>
+    </div>
+    <div class="new-business__industry-male-female">
+      <%= f.label :male, class: "new-business__label" %>
+      <%= f.text_field :male, type: "float", class: "new-business__field" %>
+    </div>
+    <div class="new-business__industry-male-female">
+      <%= f.label :female, class: "new-business__label" %>
+      <%= f.text_field :female, type: "float", class: "new-business__field" %>
+    </div>
+  </div>
+  <div class="new-business__field-text-block">
+    <div class="new-business__row">
+      <%= f.label :age_range_from, class: "new-business__label" %>
+      <%= f.text_field :age_range_from, type: "integral", class: "new-business__field" %>
+    </div>
+    <div class="new-business__row">
+      <%= f.label :age_range_to, class: "new-business__label" %>
+      <%= f.text_field :age_range_to, type: "integral", class: "new-business__field" %>
+    </div>
+  </div>
+  <h2 class="new-business__locations-title">Locations</h2>
+  <%= f.fields_for :locations, html: { multipart: true } do |location| %>
+  <div class="new-business__add-location-container">
+    <div class="new-business__add-location">
+      <button type="button" title="Delete location" class="new-business__delete-location"></button>
+      <div class="new-business__field-text-block">
+        <%= location.label :description, class: "new-business__label" %>
+        <%= location.text_area :description, type: "text", class: "new-business__field new-business__field-description new-business__reset-fields" %>
+      </div>
+      <div class="new-business__field-text-block">
+        <%= location.label :address, class: "new-business__label" %>
+        <%= location.text_field :address, type: "text", class: "new-business__field new-business__reset-fields" %>
+      </div>
+      <div class="new-business__field-text-block new-business__field-text-block-image">
+        <%= location.label :"add-new-photo", "Add new photo",class: "new-business__label new-business__label-image" %>
+        <%= location.file_field :"add-new-photo", class: "new-business__add-photo new-business__reset-fields" %>
+        <%= image_tag("noimage.png", accept:'image/*', alt:"Image preview...", class:"new-business__image-location-preview") %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <div class="new-business__field-text-block">
+    <button type="button" class="new-business__add-new-location">+ Add new location</button>
+  </div>
+  <div class="new-business__field-text-block-submit">
+    <%= f.submit "Create Business", type: "submit", class: "new-business__create" %>
+    <%= link_to('Back to businesses list', businesses_path, class: "new-business__back-listings-page") %>
+  </div>
+<% end %>

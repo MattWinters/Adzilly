@@ -1,0 +1,33 @@
+<div class="listings__container">
+  <section class="listings__title-block">
+    <h1 class="listings__title">
+      <span class="listings__title-green">Available</span>
+      <br>
+      Locations
+    </h1>
+  </section>
+  <section class="listings__filter-block">
+    <div class="listings__mobile-filter">
+      <span class="listings__mobile-filter-title">Filter</span>
+      <button class="listings__arrow-down-close"></button>
+    </div>
+    <%= render "filter_form" %>
+  </section>
+  <section class="listings__locations-section">
+    <div class="listings__-sort_by-block">
+      <select name="sort_by" class="listings__sort_by">
+        <option class="listings__sort_by-option" value="Sort_By" selected> Sort By</option>
+        <option class="listings__sort_by-option" value="Price">Price</option>
+        <option class="listings__sort_by-option" value="Distance" >Distance</option>
+      </select>
+    </div>
+    <%= render 'business_list' %>
+  </section>
+  <div class="listings__new-listings-block">
+    <% if user_signed_in? %>
+      <%= link_to('Create a new listing', new_business_path, class: "listings__new-listings-button") %>
+    <% else %>
+      <%= link_to('Create a new listing', new_user_registration_path, class: "listings__new-listings-button") %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<section class="business__description">
+  <div class="business__description-content">
+    <div class="business__description-information">
+      <div class="business__title-information">
+        <h2 class="business__title-business">
+          <%= @business.title %>
+        </h2>
+        <p class="business__description-business">
+          <%= @business.description %>
+        </p>
+      </div>
+      <div class="business__slider-images">
+        <button class="business__slider-button business__slider-button-prev">
+          <%= image_tag("show-images/arrow-slider.svg", class:"business__slider-button-image business__slider-button-image-prev") %>
+        </button>
+        <div class="business__slider-container">
+          <div id="business__slider-images-container">
+            <%= image_tag("show-images/slide1.png", class:"business__slider-image") %>
+            <%= image_tag("show-images/slide2.png", class:"business__slider-image") %>
+            <%= image_tag("show-images/slide3.png", class:"business__slider-image") %>
+            <%= image_tag("show-images/trendy-youth-media-v1xjlra7F40-unsplash.png", class:"business__slider-image") %>
+          </div>
+        </div>
+        <button class="business__slider-button business__slider-button-next">
+          <%= image_tag("show-images/arrow-slider.svg", class:"business__slider-button-image business__slider-button-image-next") %>
+        </button>
+      </div>
+    </div>
+    <div id="business__general-image-block" class="business__general-image-block">
+      <%= image_tag("show-images/trendy-youth-media-v1xjlra7F40-unsplash.png", class:"business__general-image") %>
+    </div>
+  </div>
+</section>
+<section class="business__information">
+  <div class="business__information-content">
+    <h2 class="business__information-title">Information</h2>
+    <div class="business__information-items">
+      <div class="business__information-item">
+        <p class="business__information-item-title">
+          <%= image_tag("show-images/show-icon-world.svg", class:"business__information-item-icon") %>
+          Address
+        </p>
+        <span class="business__information-item-description">
+          <%= @business.address %>
+        </span>
+      </div>
+      <div class="business__information-item">
+        <p class="business__information-item-title">
+          <%= image_tag("show-images/show-icon-marker.svg", class:"business__information-item-icon") %>
+          Distance
+        </p>
+        <span class="business__information-item-description">
+          <%= "#{number_to_human(@business.distance_from(@location_business), units: {unit: 'mi'}) || 'Unknown distance'} away from you." %>
+        </span>
+      </div>
+      <div class="business__information-item">
+        <p class="business__information-item-title">
+          <%= image_tag("show-images/show-icon-money.svg", class:"business__information-item-icon") %>
+          Price
+        </p>
+        <span class="business__information-item-description">
+          <%= "#{number_to_currency(@business.price)}/per month." %>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

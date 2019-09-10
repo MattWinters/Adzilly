@@ -1,0 +1,22 @@
+<%= form_tag businesses_path(action: 'index'), class: "listings__filter-form", method: :get, remote: true do %>
+  <div class="listings__filter-field-block">
+    <%= label_tag :price, "Maximum price", class: "listings__filter-label" %>
+    <%= number_field_tag :price, @price, placeholder:"Your text here", class: "listings__filter-field listings__filter-field-number", min: "0" %>
+  </div>
+  <div class="listings__filter-field-block">
+    <%= label_tag :industry, "Industry",class: "listings__filter-label" %>
+    <%= select_tag :industry, options_for_select(@indusries_for_selest), class: "listings__filter-field listings__filter-field-select" %>
+  </div>
+  <div class="listings__filter-field-block">
+    <%= label_tag :miles, "Within", class: "listings__filter-label" %>
+    <%= number_field_tag :miles, @miles, placeholder:"Your text here", class: "listings__filter-field listings__filter-field-number", min: "0" %>
+  </div>
+  <div class="listings__filter-field-block">
+    <%= label_tag :location, "Miles of", class: "listings__filter-label" %>
+    <%= text_field_tag :location, @filter_location, placeholder:"Your text here", class: "listings__filter-field" %>
+  </div>
+  <div class="listings__filter-submit-block">
+    <%= submit_tag "Filter", class: "listings__filter-submit-button" %>
+    <%= link_to('Clear', businesses_path(:clear => true), class: "listings__filter-clear-button") %>
+  </div>
+<% end %>

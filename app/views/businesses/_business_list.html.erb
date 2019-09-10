@@ -1,0 +1,40 @@
+<div id="listings__locations-items">
+  <% @businesses.each do |business| %>
+    <div class="listings__locations-item-container">
+      <div class="listings__locations-item">
+        <div class="listings__locations-slider-container">
+          <button class="listings__slider-button listings__slider-button-prev">
+            <%= image_tag("show-images/arrow-slider.svg", class:"listings__locations-slider-prev-icon") %>
+          </button>
+          <div class="listings__locations-slider">
+            <%= business.locations.each do |location| %>
+              <%= image_tag(location.image.url, class:"listings__locations-slider-image") %>
+            <% end %>
+          </div>
+          <button class="listings__slider-button listings__slider-button-next">
+            <%= image_tag("show-images/arrow-slider.svg", class:"listings__locations-slider-next-icon") %>
+          </button>
+        </div>
+        <%= link_to "#{business.title}", business_path(business), class: "listings__item-title-link" %>
+        <p class="listings__item-description"><%= business.description %></p>
+        <div class="listings__item-price-distance-container">
+          <div class="listings__item-price-distance">
+            <%= image_tag("show-images/show-icon-marker.svg", class:"listings__locations-distance-icon") %>
+            <p class="listings__item-price-distance-text">
+              <%= number_to_human(business.distance_from(@location_business), units: {unit: "mi"}) || "Unknown" %>
+            </p>
+          </div>
+          <div class="listings__item-price-distance">
+            <%= image_tag("show-images/show-icon-money.svg", class:"listings__locations-price-icon") %>
+            <p class="listings__item-price-distance-text">
+              <%= "#{number_to_currency(business.price)} /per month" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="listings__item-paginate">
+    <%= paginate @businesses, remote: true %>
+  </div>
+</div>

@@ -1,0 +1,206 @@
+.new-business__background{
+  background-color: #000;
+  position: relative;
+  padding: 30px 0;
+
+  &::before{
+    content: "";
+    width: 100%;
+    height: 40px;
+    background-color: #A1D33C;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  .new-business__container{
+    background-color: #262626;
+    margin: auto;
+    padding: 30px 50px;
+    max-width: 700px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .new-business__title{
+    font-size: 56px;
+    line-height: 84px;
+    color: #fff;
+    font-family: RalewayRegular-bold;
+    margin: 0px;
+  }
+
+  .new-business__field{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: 1px solid #A1D33C;
+    padding: 20px;
+  }
+
+  .new-business__title-green{
+    color: #A1D33C;
+  }
+
+  .new-business__field-text-block{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .new-business__label {
+    font-family: RalewayRegular;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 33px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .new-business__create{
+    background: #37474F;
+    font-family: RalewayRegular;
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+    padding: 22px;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover{
+      color: #A1D33C;
+    }
+  }
+
+  .new-business__back-listings-page{
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    font-family: RalewayRegular;
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    margin-left: 26px;
+
+    &:hover{
+      border: 2px solid #A1D33C;
+      color: #A1D33C;
+    }
+  }
+
+  .new-business__field-text-block-image{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .new-business__label-image{
+    margin-bottom: 0px;
+    margin-right: 15px;
+    background-color: #37474F;
+    padding: 5px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #A1D33C;
+    }
+  }
+
+  .new-business__field-text-block-select select{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: 1px solid #A1D33C;
+    background-color: #fff;
+    padding: 20px;
+  }
+
+  .new-business__field-description{
+    height: 100px;
+    min-width: 100%;
+  }
+
+  .new-business__row{
+    width: 49%;
+  }
+
+  .new-business__industry-male-female{
+    width: 32%;
+  }
+
+  .new-business__add-new-location{
+    border: none;
+    background-color: transparent;
+    color: #A1D33C;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+    margin: 20px 0px 0px auto;
+  }
+
+  .new-business__field-text-block-submit{
+    margin-top: 50px;
+  }
+
+  .new-business__locations-title{
+    font-size: 36px;
+    color: #A1D33C;
+    font-family: RalewayRegular-bold;
+    margin: 20px 0px 0px;
+  }
+
+  .new-business__add-location-container .new-business__add-location{
+    border-top: 2px solid #A1D33C;
+    margin-top: 20px;
+
+    &:first-child{
+      border: none;
+    }
+  }
+
+  .new-business__image-location-preview{
+    height: 100px;
+    width: 150px;
+    object-fit: cover;
+  }
+
+  .new-business__add-photo{
+    width: 0px;
+  }
+
+  .new-business__delete-location{
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    display: block;
+    margin: 20px 0px 20px auto;
+    outline: none;
+
+
+    &::after, &::before{
+      content: "";
+      position: absolute;
+      height: 3px;
+      width: 20px;
+      background-color: #FF0000;
+      left: -5px;
+    }
+
+     &::before{
+       transform: rotate(135deg);
+     }
+
+     &::after{
+       transform: rotate(45deg);
+     }
+
+  }
+}

@@ -1,0 +1,130 @@
+.business_mb__description {
+  text-align: center;
+
+  .business_mb__title {
+    font-family: RalewayRegular-bold;
+    font-size: 44px;
+    margin: 30px auto;
+    padding: 0 38px;
+
+    &:first-line {
+      color: #A1D33C;
+    }
+  }
+
+  .business_mb__current-descripton {
+    font-family: RalewayRegular;
+    font-size: 11px;
+    margin: 30px auto;
+    padding: 0 28px;
+  }
+
+  .business_mb__border-line {
+    height: 15px;
+    background: #A1D33C;
+  }
+
+  .business_mb__information {
+    font-family: RalewayRegular-bold;
+    font-size: 23px;
+    margin: 41px auto;
+    text-transform: uppercase;
+  }
+
+  .information_current_business {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    .business_mb__block-information {
+      margin: 0 10px;
+      text-align: left;
+
+      .business_mb__headline-information {
+        font-family: RalewayRegular-bold;
+        font-size: 17px;
+        display: flex;
+        height: 22px;
+        margin-bottom: 18px;
+
+        .business_mb__hedline_icon {
+          width: 19px;
+          margin-right: 7px;
+        }
+      }
+
+      .business_mb__description-information {
+        font-family: RalewayRegular;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .business_mb__photo {
+    display: flex;
+    height: 45%;
+
+    .business_mb__main-photo-place {
+      min-width: 66%;
+    }
+
+    .business_mb__slider-block {
+      overflow: hidden;
+      position: relative;
+
+      .business_mb__slider-button {
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        background: #000;
+        width: 118px;
+        height: 35px;
+        opacity: 0.3;
+        border: none;
+
+        &.business_mb__slider-down {
+          bottom: 0;
+        }
+
+        .business_mb__button-arrow {
+          width: 27px;
+
+          &.up {
+            transform: rotate(-90deg);
+          }
+
+          &.down {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .business_mb__slider-button:hover {
+        opacity: 0.7;
+      }
+
+      .business_mb__slider-other-photo {
+        text-align: right;
+
+        .business_mb__place {
+          width: 118px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .business_mb__description .business_mb__photo {
+    width: 565px;
+    margin: auto;
+
+    .business_mb__slider-block .business_mb__slider-button {
+      width: 177px;
+    }
+
+    .business_mb__slider-block .business_mb__slider-other-photo .business_mb__place {
+      width: 177px;
+    }
+  }
+}

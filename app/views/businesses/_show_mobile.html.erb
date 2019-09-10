@@ -1,0 +1,55 @@
+<section class="business_mb__description">
+  <h2 class="business_mb__title">
+    <%= @business.title %>
+  </h2>
+  <p class="business_mb__current-descripton">
+    <%= @business.description %>
+  </p>
+  <div class="business_mb__border-line"></div>
+  <h3 class="business_mb__information">Information</h3>
+  <div class="information_current_business">
+    <div class="business_mb__block-information">
+      <p class="business_mb__headline-information">
+        <%= image_tag("show-images/show-icon-world.svg", class:"business_mb__hedline_icon") %>
+        Address
+      </p>
+      <span class="business_mb__description-information">
+        <%= @business.address %>
+      </span>
+    </div>
+    <div class="business_mb__block-information">
+      <p class="business_mb__headline-information">
+        <%= image_tag("show-images/show-icon-marker.svg", class:"business_mb__hedline_icon") %>
+        Distance
+      </p>
+      <span class="business_mb__description-information">
+        <%= "#{number_to_human(@business.distance_from(@location_business), units: {unit: 'mi'}) || 'Unknown distance'} away from you." %>
+      </span>
+    </div>
+    <div class="business_mb__block-information">
+      <p class="business_mb__headline-information">
+        <%= image_tag("show-images/show-icon-money.svg", class:"business_mb__hedline_icon") %>
+        Price
+      </p>
+      <span class="business_mb__description-information">
+        <%= "#{number_to_currency(@business.price)}/per month." %>
+      </span>
+    </div>
+  </div>
+  <div class="business_mb__photo">
+    <%= image_tag(@business.locations.last.image.url, class:"business_mb__main-photo-place") %>
+    <div class="business_mb__slider-block">
+      <button type="button" class="business_mb__slider-button business_mb__slider-up">
+        <%= image_tag("show-images/arrow-slider.svg", class:"business_mb__button-arrow up") %>
+      </button>
+      <button type="button" class="business_mb__slider-button business_mb__slider-down">
+        <%= image_tag("show-images/arrow-slider.svg", class:"business_mb__button-arrow down") %>
+      </button>
+      <div class="business_mb__slider-other-photo">
+        <% @business.locations.each do |location| %>
+          <%= image_tag(location.image.url, class:"business_mb__place") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

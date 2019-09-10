@@ -1,0 +1,2 @@
+document.getElementById("listings__locations-items").innerHTML = "<%= escape_javascript(render 'business_list') %>";
+document.dispatchEvent(new CustomEvent("listingsSlider"));

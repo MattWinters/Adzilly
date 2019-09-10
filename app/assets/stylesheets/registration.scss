@@ -1,0 +1,367 @@
+.registration__block{
+  background-color: #000;
+  min-height: calc(100vh - 180px);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url(registration-image.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 35% 100%;
+  display: flex;
+  align-items: center;
+
+  .registration__block-overlay{
+    display: flex;
+    align-self: center;
+    max-height: 1024px;
+    background-color: #262626;
+    width: calc(65% - 120px) ;
+    margin: auto auto auto 120px;
+    flex-direction: column;
+    padding: 60px 198px;
+    box-sizing: border-box;
+    position: relative;
+
+    &:before{
+      content: '';
+      position: absolute;
+      height: 70px;
+      width: 120px;
+      background-color: #A1D33C;
+      left: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .registration__title{
+    font-size: 56px;
+    line-height: 84px;
+    color: #fff;
+    font-family: RalewayRegular-bold;
+    margin: 0px;
+  }
+
+  .registration__title-green{
+    color: #A1D33C;
+  }
+
+  .registration__title-description{
+    font-family: RalewayRegular;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 33px;
+    color: #fff;
+  }
+
+  .registration__label{
+    font-family: RalewayRegular;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 33px;
+    color: #fff;
+  }
+
+  .registration__field{
+    background: #F5F7FB;
+    border: 1px solid #A1D33C;
+    box-sizing: border-box;
+    height: 66px;
+    width: 100%;
+    margin-top: 16px;
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  .registration__field-text{
+    margin-top: 25px;
+  }
+
+  .registration__sign-buttons{
+    margin-top: 60px;
+  }
+
+  .registration__forgot_password{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 33px;
+    font-family: RalewayRegular;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover{
+      color: #A1D33C;
+    }
+  }
+
+  .registration__remember_me-label{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 33px;
+    font-family: RalewayRegular;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover{
+      color: #A1D33C;
+    }
+  }
+
+  .registration__remember_me-check_box{
+    height: 15px;
+    width: 15px;
+    margin-left: 10px;
+  }
+
+  .registration__remember_me-forgot_password{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .registration__button-sign-up{
+    background: #37474F;
+    font-family: RalewayRegular;
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+    padding: 35px 57px;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover{
+      color: #A1D33C;
+    }
+  }
+
+  .registration__button-sign-in{
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    font-family: RalewayRegular;
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+    padding: 32px 57px;
+    text-decoration: none;
+    margin-left: 26px;
+
+    &:hover{
+      color: #A1D33C;
+      border: 2px solid #A1D33C;
+    }
+  }
+
+  .registration__remember_me-forgot_password{
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+
+  .registration__remember_me{
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media all and (max-width: 1650px){
+
+  .registration__block{
+    background-size: 43% 100%;
+
+    .registration__block-overlay{
+      padding: 60px 90px;
+      width: calc(57% - 70px);
+      margin: auto auto auto 70px;
+
+      &::before{
+        width: 70px;
+        left: -70px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1400px){
+
+  .registration__block{
+
+    .registration__block-registration-block{
+      padding: 60px;
+    }
+
+    .registration__title{
+      font-size: 40px;
+    }
+
+    .registration__button-sign-up{
+      padding: 30px 40px;
+    }
+
+    .registration__button-sign-in{
+      padding: 28px 40px;
+    }
+
+    .registration__field{
+      height: 50px;
+    }
+  }
+}
+
+@media all and (max-width: 1024px){
+
+  .registration__block{
+    background-size: cover;
+    padding: 0px;
+    display: block;
+
+    .registration__block-overlay{
+      background-color: rgba(0, 0, 0, .35);
+      min-height: 100%;
+      width: 100%;
+      margin: 0px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      max-height: fit-content;
+
+      &::before{
+        display: none;
+      }
+    }
+
+    .registration__title{
+      text-align: center;
+      font-size: 80px;
+    }
+
+    .registration__title-description{
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .registration__label{
+      font-size: 36px;
+      line-height: 40px;
+    }
+
+    .registration__field{
+      height: 75px;
+      font-size: 25px;
+      margin-top: 30px;
+    }
+
+    .registration__field-text{
+      margin-top: 50px;
+    }
+
+    .registration__remember_me-label{
+      font-size: 25px;
+    }
+
+    .registration__forgot_password{
+      font-size: 25px;
+    }
+
+    .registration__button-sign-up{
+      font-size: 32px;
+    }
+
+    .registration__button-sign-in{
+      font-size: 32px;
+    }
+  }
+}
+
+@media all and (max-width: 650px){
+
+  .registration__block{
+
+    .registration__remember_me-forgot_password {
+      flex-wrap: wrap;
+    }
+
+    .registration__remember_me{
+      margin-bottom: 15px;
+    }
+
+    .registration__button-sign-up {
+      font-size: 22px;
+      padding: 20px 25px;
+    }
+
+    .registration__button-sign-in{
+      font-size: 22px;
+      padding: 18px 25px;
+    }
+
+    .registration__title-description{
+      font-size: 26px;
+    }
+
+    .registration__title{
+      font-size: 65px;
+    }
+
+    .registration__block-overlay{
+      padding: 60px 25px;
+    }
+  }
+}
+
+@media all and (max-width: 450px){
+
+  .registration__block{
+
+    .registration__title{
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    .registration__title-description{
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .registration__field-text {
+      margin-top: 18px;
+    }
+
+    .registration__label {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .registration__field {
+      height: 35px;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    .registration__button-sign-up {
+      font-size: 18px;
+      padding: 15px 15px;
+    }
+
+    .registration__button-sign-in {
+      font-size: 18px;
+      padding: 13px 15px;
+      margin-left: 15px;
+    }
+
+    .registration__remember_me-label, .registration__forgot_password {
+      font-size: 16px;
+    }
+
+    .registration__remember_me{
+      margin-bottom: 0px;
+    }
+
+    .registration__remember_me-forgot_password{
+      margin-bottom: 20px;
+    }
+
+    .registration__sign-buttons {
+      margin-top: 40px;
+    }
+  }
+}
