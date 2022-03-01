@@ -38,7 +38,7 @@ gem 'haml', '~> 5.0.4'
 gem 'haml-rails', '~> 1.0.0'
 
 # gem to allow images
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 # Image Hosting
 gem 'aws-sdk', '~> 2'
